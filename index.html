@@ -46,9 +46,10 @@
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--card-border);
         }
-        .nav-row { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo-wrap { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; font-family: var(--heading-font); color: var(--text-main); text-decoration: none; }
-        .logo-badge { background: #059669; color: #fff; width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 17px; }
+        .nav-row { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .logo-wrap { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; font-family: var(--heading-font); color: var(--text-main); text-decoration: none; }
+        .logo-badge { background: #059669; color: #fff; width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25); }
+        .logo-text { font-weight: 800; letter-spacing: -0.03em; color: #111827; }
         .nav-links { display: flex; align-items: center; gap: 20px; }
         .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .2s; }
         .nav-links a:hover { color: var(--brand-green); }
@@ -69,7 +70,7 @@
             border: 1px solid var(--card-border); padding: 16px 28px; font-size: 16px;
         }
         .btn-secondary:hover { background: #F5F5F4; }
-        .btn-sm { padding: 8px 16px; font-size: 13px; }
+        .btn-sm { padding: 9px 18px; font-size: 13px; }
 
         /* Hero */
         .hero { padding: 64px 0 44px; text-align: center; }
@@ -122,10 +123,10 @@
             border-radius: 16px; padding: 26px; transition: border-color .2s, transform .2s;
         }
         .feature-card:hover { border-color: var(--brand-green-border); transform: translateY(-2px); }
-        .feature-icon {
-            width: 44px; height: 44px; border-radius: 12px; background: var(--brand-green-light);
+        .feature-icon-box {
+            width: 46px; height: 46px; border-radius: 12px; background: var(--brand-green-light);
             color: var(--brand-green); display: flex; align-items: center; justify-content: center;
-            font-size: 20px; font-weight: 800; margin-bottom: 16px;
+            margin-bottom: 18px; border: 1px solid var(--brand-green-border);
         }
         .feature-card h4 { font-family: var(--heading-font); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
         .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
@@ -175,13 +176,13 @@
         <div class="container nav-row">
             <a href="#" class="logo-wrap">
                 <div class="logo-badge">p</div>
-                <span>pangaBIZ</span>
+                <span class="logo-text">pangaBIZ</span>
             </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#how-to-install">Install</a>
                 <a href="#faq">FAQ</a>
-                <a href="https://expensoo-dun.vercel.app/app" class="btn btn-secondary btn-sm" target="_blank">Open Web App</a>
+                <a href="https://expensoo-dun.vercel.app/signup" class="btn btn-secondary btn-sm" target="_blank">Sign Up / Sign In</a>
             </div>
         </div>
     </header>
@@ -203,8 +204,8 @@
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download Android APK (Free)
                     </a>
-                    <a href="https://expensoo-dun.vercel.app/app" class="btn btn-secondary" target="_blank">
-                        Open in Browser (PC / Mobile)
+                    <a href="https://expensoo-dun.vercel.app/signup" class="btn btn-secondary" target="_blank">
+                        Open in Browser (New Register / Sign In)
                     </a>
                 </div>
 
@@ -247,74 +248,110 @@
                 </div>
 
                 <div class="feature-grid">
+                    <!-- 1. 3-Second POS -->
                     <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </div>
                         <h4>3-Second POS Counter</h4>
                         <p>One-tap sales ringing for catalog products plus quick untracked entries (e.g. <em>Chai KES 30</em>). Checkout via Cash, M-Pesa, or Credit without slowing down customer lines.</p>
                     </div>
 
+                    <!-- 2. Customer Madeni Book -->
                     <div class="feature-card">
-                        <div class="feature-icon">📖</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="14" y2="10"/></svg>
+                        </div>
                         <h4>Customer Debt Book (Madeni)</h4>
                         <p>Record customer names, phone numbers, and items taken on credit. Track partial repayments over time and generate polite WhatsApp payment reminders with one tap.</p>
                     </div>
 
+                    <!-- 3. Supplier Credit Ledger -->
                     <div class="feature-card">
-                        <div class="feature-icon">📦</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </div>
                         <h4>Supplier Credit Ledger</h4>
                         <p>Keep track of delivery invoices, stock delivered on credit, outstanding supplier balances, and scheduled payment dates so your supply never stops.</p>
                     </div>
 
+                    <!-- 4. Cash Float & Reconciliation -->
                     <div class="feature-card">
-                        <div class="feature-icon">💰</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </div>
                         <h4>Cash Float & Evening Reconciliation</h4>
                         <p>Record morning cash float in your drawer. At day close, count physical cash; the system automatically calculates if your till is balanced, over, or short.</p>
                     </div>
 
+                    <!-- 5. Expense Payouts -->
                     <div class="feature-card">
-                        <div class="feature-icon">💸</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><path d="m14 14-2 2-2-2"/></svg>
+                        </div>
                         <h4>Direct Store Expense Payouts</h4>
                         <p>Record small payouts straight from the cash drawer (bread delivery, electricity tokens, council fee). Every coin taken out is matched against sales.</p>
                     </div>
 
+                    <!-- 6. Offline-First Storage -->
                     <div class="feature-card">
-                        <div class="feature-icon">📶</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
                         <h4>100% Offline-First Storage</h4>
                         <p>No bundles or internet required. All sales, debts, expenses, and inventory are stored locally on your device and automatically sync when online.</p>
                     </div>
 
+                    <!-- 7. AI Financial Advisor -->
                     <div class="feature-card">
-                        <div class="feature-icon">🤖</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+                        </div>
                         <h4>AI Financial Advisor — Msaidizi</h4>
                         <p>Ask in English, Swahili, or Sheng: <em>"Niko na profit kiasi leo?"</em> or <em>"Vitu gani zinalala kwa shelf?"</em>. Answers with live margin analysis and dead stock alerts.</p>
                     </div>
 
+                    <!-- 8. Voice Journal -->
                     <div class="feature-card">
-                        <div class="feature-icon">🎙️</div>
-                        <h4>Daily Voice Journal & Photo Attachments</h4>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                        </div>
+                        <h4>Daily Voice Journal & Notes</h4>
                         <p>Tap the mic to record daily voice notes via speech-to-text. Log supplier price hikes, foot traffic notes, or snap photos of paper delivery receipts.</p>
                     </div>
 
+                    <!-- 9. WhatsApp Receipts -->
                     <div class="feature-card">
-                        <div class="feature-icon">🧾</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
                         <h4>Digital WhatsApp Receipts</h4>
                         <p>Generate clean digital receipts with store branding, timestamp, itemized bill, and payment details. Send directly to the customer's WhatsApp in one tap.</p>
                     </div>
 
+                    <!-- 10. Goals & Targets -->
                     <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
                         <h4>Financial Goals & Targets</h4>
                         <p>Set milestones (e.g. <em>Buy Display Chiller KES 45,000</em>). Visual progress bar shows remaining shortfall and lets you top-up goals directly from daily profit.</p>
                     </div>
 
+                    <!-- 11. Staff PIN Lock -->
                     <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
                         <h4>Multi-Shop & Staff PIN Lock</h4>
                         <p>Manage multiple shops under one account. Lock counter screens with a 4-digit Cashier PIN: staff can ring sales while profit margins stay hidden.</p>
                     </div>
 
+                    <!-- 12. Online Catalog -->
                     <div class="feature-card">
-                        <div class="feature-icon">🛍️</div>
+                        <div class="feature-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        </div>
                         <h4>Online Order Catalog</h4>
                         <p>Share a direct digital catalog link where your customers can view your shop items, prices, and photos, and submit orders directly to your counter.</p>
                     </div>
@@ -398,7 +435,7 @@
 
                     <details>
                         <summary>Can I use pangaBIZ on my laptop or PC?</summary>
-                        <p>Yes. Simply open <a href="https://expensoo-dun.vercel.app/app" target="_blank" style="color:var(--brand-green);font-weight:600;">expensoo-dun.vercel.app/app</a> in your computer browser. All sales entered on your phone or PC sync to the same store account in real time.</p>
+                        <p>Yes. Simply click <a href="https://expensoo-dun.vercel.app/signup" target="_blank" style="color:var(--brand-green);font-weight:600;">Sign Up / Sign In</a>. All sales entered on your phone or PC sync to the same store account in real time.</p>
                     </details>
 
                     <details>
@@ -426,9 +463,10 @@
                 <p>Start recording sales in 3 seconds. Free Android APK sideload or direct browser access.</p>
                 <div class="hero-actions">
                     <a href="https://github.com/DUKE21-BYTE/PangaBiz/releases/latest/download/pangabiz.apk" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download Android APK
                     </a>
-                    <a href="https://expensoo-dun.vercel.app/app" class="btn btn-secondary" target="_blank">
+                    <a href="https://expensoo-dun.vercel.app/signup" class="btn btn-secondary" target="_blank">
                         Open Web Version
                     </a>
                 </div>
