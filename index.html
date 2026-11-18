@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>pangaBIZ — Every Shilling Accounted For | Digital Shop Notebook & POS</title>
     <meta name="description" content="The digital notebook for Kenyan dukas, salons, pharmacies, kiosks, and retail businesses. 3-second POS, Customer Debt Book (Madeni), Day Close Cash Balancing, and an AI shop advisor.">
     <meta property="og:title" content="pangaBIZ — Every Shilling Accounted For" />
     <meta property="og:description" content="Fast 3-second POS, Customer Madeni Book, Morning Float & Evening Cash Balancing, Voice Journal, and AI Advisor. 100% Offline Ready." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="loading-logo-circular.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,126 +32,210 @@
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
         body {
             font-family: var(--body-font);
             background: var(--bg-base);
             color: var(--text-main);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            width: 100%;
         }
 
-        .container { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
-        .container-sm { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1060px; margin: 0 auto; padding: 0 16px; }
+        .container-sm { max-width: 780px; margin: 0 auto; padding: 0 16px; }
+        @media (min-width: 640px) {
+            .container { padding: 0 20px; }
+            .container-sm { padding: 0 20px; }
+        }
 
         /* Navigation */
         .site-header {
             position: sticky; top: 0; z-index: 50;
-            background: rgba(250, 250, 249, 0.95);
+            background: rgba(250, 250, 249, 0.96);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--card-border);
         }
-        .nav-row { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-        .logo-wrap { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; font-family: var(--heading-font); color: var(--text-main); text-decoration: none; }
-        .logo-badge { background: #059669; color: #fff; width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25); }
+        .nav-row {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px; gap: 12px;
+        }
+        @media (min-width: 640px) {
+            .nav-row { height: 68px; }
+        }
+        .logo-wrap {
+            display: flex; align-items: center; gap: 10px;
+            font-weight: 800; font-size: 20px; font-family: var(--heading-font);
+            color: var(--text-main); text-decoration: none; flex-shrink: 0;
+        }
+        @media (min-width: 640px) {
+            .logo-wrap { font-size: 22px; gap: 12px; }
+        }
+        .brand-logo-img {
+            width: 36px; height: 36px; border-radius: 50%;
+            object-fit: cover; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+            flex-shrink: 0;
+        }
+        @media (min-width: 640px) {
+            .brand-logo-img { width: 40px; height: 40px; }
+        }
         .logo-text { font-weight: 800; letter-spacing: -0.03em; color: #111827; }
-        .nav-links { display: flex; align-items: center; gap: 20px; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .2s; }
-        .nav-links a:hover { color: var(--brand-green); }
+        .nav-links { display: flex; align-items: center; gap: 12px; }
+        @media (min-width: 640px) {
+            .nav-links { gap: 20px; }
+        }
+        .nav-links a:not(.btn) {
+            color: var(--text-muted); text-decoration: none; font-size: 14px;
+            font-weight: 600; transition: color .2s; display: none;
+        }
+        @media (min-width: 768px) {
+            .nav-links a:not(.btn) { display: inline-block; }
+        }
+        .nav-links a:not(.btn):hover { color: var(--brand-green); }
 
         /* Buttons */
         .btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
             font-family: var(--body-font); font-weight: 700;
             border-radius: 12px; transition: all .2s; text-decoration: none; cursor: pointer; border: none;
+            text-align: center;
         }
         .btn-primary {
             background: var(--brand-green); color: #fff;
-            padding: 16px 32px; font-size: 16px; box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+            padding: 14px 22px; font-size: 15px; box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+        }
+        @media (min-width: 640px) {
+            .btn-primary { padding: 16px 32px; font-size: 16px; }
         }
         .btn-primary:hover { background: var(--brand-green-hover); transform: translateY(-1px); }
         .btn-secondary {
             background: #fff; color: var(--text-main);
-            border: 1px solid var(--card-border); padding: 16px 28px; font-size: 16px;
+            border: 1px solid var(--card-border); padding: 14px 20px; font-size: 15px;
+        }
+        @media (min-width: 640px) {
+            .btn-secondary { padding: 16px 28px; font-size: 16px; }
         }
         .btn-secondary:hover { background: #F5F5F4; }
-        .btn-sm { padding: 9px 18px; font-size: 13px; }
+        .btn-sm { padding: 8px 14px; font-size: 13px; border-radius: 10px; white-space: nowrap; }
+        @media (min-width: 640px) {
+            .btn-sm { padding: 9px 18px; font-size: 13px; }
+        }
 
         /* Hero */
-        .hero { padding: 64px 0 44px; text-align: center; }
+        .hero { padding: 44px 0 32px; text-align: center; }
+        @media (min-width: 768px) {
+            .hero { padding: 64px 0 44px; }
+        }
         .badge {
             display: inline-flex; align-items: center; gap: 8px;
-            padding: 6px 16px; margin-bottom: 22px;
+            padding: 6px 14px; margin-bottom: 18px;
             border-radius: 999px; background: var(--brand-green-light);
             border: 1px solid var(--brand-green-border); color: #065F46;
-            font-size: 13px; font-weight: 700;
+            font-size: 12px; font-weight: 700; max-width: 100%;
+            text-align: center; line-height: 1.4;
+        }
+        @media (min-width: 640px) {
+            .badge { font-size: 13px; padding: 6px 16px; margin-bottom: 22px; }
         }
         .hero h1 {
-            font-family: var(--heading-font); font-size: 46px; font-weight: 800;
-            letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 18px;
+            font-family: var(--heading-font);
+            font-size: clamp(26px, 6.5vw, 46px);
+            font-weight: 800; letter-spacing: -0.025em; line-height: 1.18;
+            margin-bottom: 16px; word-break: break-word;
         }
         .hero p.lead {
-            font-size: 18px; color: var(--text-muted); max-width: 680px; margin: 0 auto 32px; line-height: 1.6;
+            font-size: clamp(15px, 3.8vw, 18px);
+            color: var(--text-muted); max-width: 680px; margin: 0 auto 28px;
+            line-height: 1.55; padding: 0 4px;
         }
-        .hero-actions { display: flex; flex-direction: column; gap: 14px; justify-content: center; align-items: center; }
-        @media(min-width: 640px) { .hero-actions { flex-direction: row; } }
+        .hero-actions {
+            display: flex; flex-direction: column; gap: 12px; justify-content: center; align-items: stretch;
+            width: 100%; max-width: 440px; margin: 0 auto;
+        }
+        @media (min-width: 640px) {
+            .hero-actions { flex-direction: row; align-items: center; max-width: none; gap: 14px; }
+        }
 
         .counter-badge {
-            margin-top: 18px; font-size: 13px; font-weight: 600; color: var(--text-muted);
+            margin-top: 16px; font-size: 12px; font-weight: 600; color: var(--text-muted);
             display: flex; align-items: center; justify-content: center; gap: 6px;
+            flex-wrap: wrap; text-align: center; line-height: 1.4; padding: 0 8px;
         }
-        .counter-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green); }
+        .counter-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green); flex-shrink: 0; }
 
         /* Installation Guide Box */
         .guide-box {
-            margin: 44px auto 0; background: #fff; border: 1px solid var(--card-border);
-            border-radius: 20px; padding: 28px; text-align: left;
+            margin: 36px auto 0; background: #fff; border: 1px solid var(--card-border);
+            border-radius: 20px; padding: clamp(18px, 4vw, 28px); text-align: left;
         }
-        .guide-box h3 { font-family: var(--heading-font); font-size: 18px; margin-bottom: 16px; }
-        .steps-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-        @media(min-width: 768px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
-        .step-item { background: var(--bg-base); padding: 18px; border-radius: 14px; border: 1px solid var(--card-border); }
+        .guide-box h3 { font-family: var(--heading-font); font-size: clamp(16px, 4vw, 18px); margin-bottom: 16px; }
+        .steps-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+        @media (min-width: 768px) { .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+        .step-item { background: var(--bg-base); padding: 16px; border-radius: 14px; border: 1px solid var(--card-border); }
         .step-num { font-size: 12px; font-weight: 800; color: var(--brand-green); text-transform: uppercase; margin-bottom: 4px; }
         .step-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
-        .step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+        .step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.45; }
 
         /* Features */
-        .features { padding: 64px 0; }
-        .section-header { text-align: center; margin-bottom: 44px; }
-        .section-header h2 { font-family: var(--heading-font); font-size: 32px; font-weight: 800; margin-bottom: 10px; }
-        .section-header p { color: var(--text-muted); font-size: 16px; max-width: 620px; margin: 0 auto; }
+        .features { padding: 48px 0; }
+        @media (min-width: 768px) { .features { padding: 64px 0; } }
+        .section-header { text-align: center; margin-bottom: 32px; padding: 0 8px; }
+        @media (min-width: 768px) { .section-header { margin-bottom: 44px; } }
+        .section-header h2 {
+            font-family: var(--heading-font);
+            font-size: clamp(22px, 5.5vw, 32px);
+            font-weight: 800; margin-bottom: 10px; line-height: 1.25;
+        }
+        .section-header p {
+            color: var(--text-muted); font-size: clamp(14px, 3.5vw, 16px);
+            max-width: 620px; margin: 0 auto; line-height: 1.5;
+        }
 
-        .feature-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        @media(min-width: 768px) { .feature-grid { grid-template-columns: repeat(3, 1fr); } }
+        .feature-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+        @media (min-width: 640px) { .feature-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+        @media (min-width: 960px) { .feature-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
         .feature-card {
             background: #fff; border: 1px solid var(--card-border);
-            border-radius: 16px; padding: 26px; transition: border-color .2s, transform .2s;
+            border-radius: 16px; padding: clamp(18px, 4vw, 24px);
+            transition: border-color .2s, transform .2s;
         }
         .feature-card:hover { border-color: var(--brand-green-border); transform: translateY(-2px); }
         .feature-icon-box {
-            width: 46px; height: 46px; border-radius: 12px; background: var(--brand-green-light);
+            width: 44px; height: 44px; border-radius: 12px; background: var(--brand-green-light);
             color: var(--brand-green); display: flex; align-items: center; justify-content: center;
-            margin-bottom: 18px; border: 1px solid var(--brand-green-border);
+            margin-bottom: 16px; border: 1px solid var(--brand-green-border); flex-shrink: 0;
         }
-        .feature-card h4 { font-family: var(--heading-font); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+        .feature-card h4 { font-family: var(--heading-font); font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        @media (min-width: 640px) { .feature-card h4 { font-size: 17px; } }
         .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
 
         /* Comparison Table */
-        .comparison-section { padding: 30px 0 60px; }
-        .table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--card-border); border-radius: 16px; }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
-        th, td { padding: 16px 20px; border-bottom: 1px solid var(--card-border); }
+        .comparison-section { padding: 24px 0 48px; }
+        @media (min-width: 768px) { .comparison-section { padding: 30px 0 60px; } }
+        .table-wrap {
+            overflow-x: auto; -webkit-overflow-scrolling: touch;
+            background: #fff; border: 1px solid var(--card-border); border-radius: 16px;
+            width: 100%;
+        }
+        table { width: 100%; min-width: 560px; border-collapse: collapse; text-align: left; font-size: 14px; }
+        th, td { padding: 14px 16px; border-bottom: 1px solid var(--card-border); }
+        @media (min-width: 640px) { th, td { padding: 16px 20px; } }
         th { font-family: var(--heading-font); font-weight: 700; background: #FAFAF9; color: var(--text-main); }
         tr:last-child td { border-bottom: none; }
         .check-green { color: var(--brand-green); font-weight: 700; }
         .cross-red { color: #DC2626; font-weight: 600; }
 
         /* FAQ */
-        .faq-section { padding: 30px 0 60px; }
+        .faq-section { padding: 24px 0 48px; }
+        @media (min-width: 768px) { .faq-section { padding: 30px 0 60px; } }
         .faq-list { display: flex; flex-direction: column; gap: 12px; }
         details {
-            background: #fff; border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 22px;
+            background: #fff; border: 1px solid var(--card-border);
+            border-radius: 12px; padding: 16px 18px;
         }
+        @media (min-width: 640px) { details { padding: 18px 22px; } }
         summary { font-weight: 700; font-size: 15px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
         summary::-webkit-details-marker { display: none; }
         details[open] summary { margin-bottom: 10px; color: var(--brand-green); }
@@ -154,19 +243,32 @@
 
         /* CTA Banner */
         .cta-banner {
-            background: #1C1917; color: #fff; border-radius: 20px; padding: 48px 32px;
-            text-align: center; margin: 40px auto 60px;
+            background: #1C1917; color: #fff; border-radius: 20px;
+            padding: clamp(32px, 6vw, 48px) clamp(18px, 4vw, 32px);
+            text-align: center; margin: 32px auto 48px;
         }
-        .cta-banner h2 { font-family: var(--heading-font); font-size: 32px; font-weight: 800; margin-bottom: 12px; }
-        .cta-banner p { color: #A8A29E; font-size: 16px; margin-bottom: 28px; max-width: 580px; margin-left: auto; margin-right: auto; }
+        .cta-banner h2 {
+            font-family: var(--heading-font);
+            font-size: clamp(22px, 5.5vw, 32px);
+            font-weight: 800; margin-bottom: 12px; line-height: 1.25;
+        }
+        .cta-banner p {
+            color: #A8A29E; font-size: clamp(14px, 3.5vw, 16px);
+            margin-bottom: 24px; max-width: 580px; margin-left: auto; margin-right: auto;
+        }
 
         /* Footer */
         .site-footer {
-            border-top: 1px solid var(--card-border); padding: 36px 0; background: #fff; text-align: center;
+            border-top: 1px solid var(--card-border); padding: 32px 0; background: #fff; text-align: center;
             font-size: 13px; color: var(--text-muted);
         }
-        .footer-links { margin-top: 12px; display: flex; gap: 20px; justify-content: center; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; }
+        .footer-brand {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px;
+        }
+        .footer-brand img { width: 24px; height: 24px; border-radius: 50%; }
+        .footer-brand span { font-weight: 700; color: var(--text-main); font-size: 15px; }
+        .footer-links { margin-top: 12px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 13px; }
         .footer-links a:hover { color: var(--brand-green); }
     </style>
 </head>
@@ -175,7 +277,7 @@
     <header class="site-header">
         <div class="container nav-row">
             <a href="#" class="logo-wrap">
-                <div class="logo-badge">p</div>
+                <img src="logo.png" alt="pangaBIZ Logo" class="brand-logo-img">
                 <span class="logo-text">pangaBIZ</span>
             </a>
             <div class="nav-links">
@@ -302,99 +404,72 @@
                         <p>No bundles or internet required. All sales, debts, expenses, and inventory are stored locally on your device and automatically sync when online.</p>
                     </div>
 
-                    <!-- 7. AI Financial Advisor -->
+                    <!-- 7. Real-Time Stock & Low-Stock Alerts -->
                     <div class="feature-card">
                         <div class="feature-icon-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
                         </div>
-                        <h4>AI Financial Advisor — Msaidizi</h4>
-                        <p>Ask in English, Swahili, or Sheng: <em>"Niko na profit kiasi leo?"</em> or <em>"Vitu gani zinalala kwa shelf?"</em>. Answers with live margin analysis and dead stock alerts.</p>
+                        <h4>Real-Time Stock & Expiry Alerts</h4>
+                        <p>Instant inventory deductions as items are sold. Automatic visual warnings when items hit their minimum reorder point or near expiry dates.</p>
                     </div>
 
-                    <!-- 8. Voice Journal -->
+                    <!-- 8. Voice Daily Business Journal -->
                     <div class="feature-card">
                         <div class="feature-icon-box">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
                         </div>
-                        <h4>Daily Voice Journal & Notes</h4>
-                        <p>Tap the mic to record daily voice notes via speech-to-text. Log supplier price hikes, foot traffic notes, or snap photos of paper delivery receipts.</p>
+                        <h4>Voice Daily Business Journal</h4>
+                        <p>Speak in Sheng, Swahili, or English. Simply hold the microphone button to dictate today's shop events, customer patterns, or supplier agreements.</p>
                     </div>
 
-                    <!-- 9. WhatsApp Receipts -->
+                    <!-- 9. AI Business Advisor (Msaidizi) -->
                     <div class="feature-card">
                         <div class="feature-icon-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                         </div>
-                        <h4>Digital WhatsApp Receipts</h4>
-                        <p>Generate clean digital receipts with store branding, timestamp, itemized bill, and payment details. Send directly to the customer's WhatsApp in one tap.</p>
-                    </div>
-
-                    <!-- 10. Goals & Targets -->
-                    <div class="feature-card">
-                        <div class="feature-icon-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                        </div>
-                        <h4>Financial Goals & Targets</h4>
-                        <p>Set milestones (e.g. <em>Buy Display Chiller KES 45,000</em>). Visual progress bar shows remaining shortfall and lets you top-up goals directly from daily profit.</p>
-                    </div>
-
-                    <!-- 11. Staff PIN Lock -->
-                    <div class="feature-card">
-                        <div class="feature-icon-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                        </div>
-                        <h4>Multi-Shop & Staff PIN Lock</h4>
-                        <p>Manage multiple shops under one account. Lock counter screens with a 4-digit Cashier PIN: staff can ring sales while profit margins stay hidden.</p>
-                    </div>
-
-                    <!-- 12. Online Catalog -->
-                    <div class="feature-card">
-                        <div class="feature-icon-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                        </div>
-                        <h4>Online Order Catalog</h4>
-                        <p>Share a direct digital catalog link where your customers can view your shop items, prices, and photos, and submit orders directly to your counter.</p>
+                        <h4>AI Shop Advisor (Msaidizi)</h4>
+                        <p>Ask questions like: <em>Which 3 products gave me the highest margin this week?</em> or <em>How much do customers owe me total?</em> Instant answers backed by your real store ledger.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Comparison Table -->
+        <!-- Feature Comparison Table -->
         <section class="comparison-section">
             <div class="container">
                 <div class="section-header">
                     <h2>How pangaBIZ Compares</h2>
-                    <p>Designed to replace messy paper notebooks without the cost or complexity of traditional POS hardware.</p>
+                    <p>Designed specifically for fast retail speed and zero daily bundle cost.</p>
                 </div>
 
                 <div class="table-wrap">
                     <table>
                         <thead>
                             <tr>
-                                <th>Capability</th>
+                                <th>Feature</th>
                                 <th>Paper Notebook</th>
-                                <th>Traditional POS Machine</th>
+                                <th>Traditional POS</th>
                                 <th>pangaBIZ</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Works with zero internet (Offline)</td>
-                                <td class="check-green">Yes</td>
-                                <td class="cross-red">Often No</td>
-                                <td class="check-green">Yes (Local-first storage)</td>
+                                <td>Sale checkout speed</td>
+                                <td>30 seconds (handwritten)</td>
+                                <td>15 seconds (slow search)</td>
+                                <td class="check-green">3 seconds (one-tap ringing)</td>
                             </tr>
                             <tr>
-                                <td>Instant sales calculation & profit report</td>
-                                <td class="cross-red">Manual calculator</td>
-                                <td class="check-green">Yes</td>
-                                <td class="check-green">Yes (Real-time)</td>
+                                <td>Customer Madeni tracking</td>
+                                <td>Hard to search & calculate</td>
+                                <td>Rarely supported</td>
+                                <td class="check-green">Yes (Auto WhatsApp reminders)</td>
                             </tr>
                             <tr>
-                                <td>Customer debt tracker (Madeni Book)</td>
-                                <td class="check-green">Messy handwriting</td>
-                                <td class="cross-red">Rarely supported</td>
-                                <td class="check-green">Yes + WhatsApp Reminders</td>
+                                <td>Works with zero internet</td>
+                                <td class="check-green">Yes</td>
+                                <td class="cross-red">Requires constant internet</td>
+                                <td class="check-green">100% Offline-First</td>
                             </tr>
                             <tr>
                                 <td>Morning float & Day-Close cash balancing</td>
@@ -477,6 +552,10 @@
 
     <footer class="site-footer">
         <div class="container">
+            <div class="footer-brand">
+                <img src="logo.png" alt="pangaBIZ Logo">
+                <span>pangaBIZ</span>
+            </div>
             <p>&copy; 2026 pangaBIZ. Every Shilling Accounted For. Made with pride in Kenya.</p>
             <div class="footer-links">
                 <a href="PRIVACY.md">Privacy Policy (KDPA 2019)</a>
